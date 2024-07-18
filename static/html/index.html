@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прогноз погоды</title>
+    <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+    <form action="/weather" method="post">
+        <label for="city">Город:</label>
+        <div>
+            <input type="text" id="city-input" name="city" {% if data['last_request'] %}value="{{data['last_request']}}" {% endif %}>
+            <div id="suggestions_container">
+                
+            </div>
+        </div>
+        <br>
+        <input class="submitbutton" type="submit" value="Получить прогноз">
+    </form>
+</body>
+<script src="static/js/index.js"></script>
+</html>
